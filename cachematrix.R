@@ -36,11 +36,7 @@ cacheSolve <- function(x, ...) {
                 return(i)
         }
         data <- x$get()
-        length<-ncol(data)
-##Creat a identity matrix of the same size as the input matrix
-        a<-rep(c(rep(0,length),1),length-1)
-        b<-matrix(c(1,a),length,length)
-        i <- solve(data,b, ...)
+        i <- solve(data, ...)
         x$setinverse(i)
         i
 }
